@@ -6,17 +6,21 @@
 #include <stdarg.h>
 #include <limits.h>
 #include <unistd.h>
-
 /**
  * struct format - match the conversion specifiers for printf
  * @id: type char pointer of the specifier i.e (l, h) for (d, i, u, o, x, X)
  * @f: type pointer to function for the conversion specifier
  *
  */
+
+/* Length Modifier Macros */
+#define SHORT 1
+#define LONG 2
+
 typedef struct format
 {
-	char *id;
-	int (*f)();
+        char *id;
+        int (*f)();
 } convert_match;
 
 int printf_pointer(va_list val);
